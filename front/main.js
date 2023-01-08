@@ -140,14 +140,15 @@ cameraBtn.addEventListener('click', cameraOnOff);
 // 	};
 // };
 
+// Both sides 위의 두 로직 합치기
 const channel = myPeerConnection.createDataChannel('chat', {
 	negotiated: true,
 	id: 0,
 });
-channel.onopen = function (e) {
+channel.onopen = () => {
 	channel.send('Hi!');
 };
-channel.onmessage = function (e) {
+channel.onmessage = e => {
 	console.log(e.data);
 	show.innerText = e.data;
 };
