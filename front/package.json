@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "main.js",
 	"scripts": {
-		"start": "webpack-dev-server --hot"
+		"start": "webpack-dev-server --hot",
+		"prestart": "npm install"
 	},
 	"author": "",
 	"license": "ISC",
