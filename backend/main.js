@@ -1,9 +1,7 @@
 import { createServer } from 'http';
 import { Server } from 'socket.io';
-import express from 'express';
 
-const app = express();
-const server = createServer(app);
+const server = createServer();
 const io = new Server(server, {
 	cors: {
 		origin: ['http://localhost:4000', 'http://10.58.52.96:4000'],
@@ -42,4 +40,4 @@ io.on('connect', socket => {
 	});
 });
 
-io.listen(3000);
+server.listen(3004);
